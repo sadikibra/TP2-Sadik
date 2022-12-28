@@ -1,4 +1,10 @@
-
+import time
+from bilhetes import(
+    imprime_lista_de_bilhetes
+)
+from io_terminal import (
+    imprime_lista_de_dicionarios
+)
 from espetaculos import (
     cria_espetaculos,
     imprime_lista_de_espetaculos,
@@ -14,7 +20,7 @@ def menu():
     """ Funcao menu cria o menu da aplicacao"""
     lista_de_espetaculos = []
     lista_de_clientes = []
-
+    lista_de_compra = []
     while True:
         print("""
         *********************************************************************
@@ -50,8 +56,33 @@ def menu():
             lista_de_clientes.append(novo_cliente)
         elif op == "cl":
             imprime_lista_de_clientes(lista_de_clientes)
+        elif op == "bn":
+            if lista_de_clientes and lista_de_espetaculos:
+                id_comprador = pergunta_id(questao="Qual o id do comprador?", lista=lista_de_clientes)
+                id_espetaculo = pergunta_id(questao="Qual o id do espetaculo?", lista=lista_de_espetaculos)
+                lista_de_compra.append([id_comprador, id_espetaculo, time.time()])
+            else:
+                print("Erro: tem de ter clientes e espetaculos")
+        elif op == "bl":
+            imprime_lista_de_bilhetes(lista_de_compra)
         #to do: implementar novas features
+
+def pergunta_id(questao, lista):
+    """ ... ??to do??
+
+    :param questao:
+    :param lista:
+    :return:
+    """
+
+    imprime_lista_de_dicionarios(lista)
+    while True:
+        idx = int(input(questao))
+        if 0 <= idx < len(lista):
+            return idx
+        else:
+            print(f"id inexistente. Tente de novo. Valores admitidos {0} - {len(lista)}")
 
 if __name__ == "__main__":
     menu()
-"""Desenha o menu no terminal"""            
+"""Desenha o menu no terminal"""   

@@ -42,3 +42,16 @@ def imprime_lista_de_dicionarios(lista):
         print(tabulate(lista_a_imprimir, headers="firstrow"))
     else:
         print("lista vazia")
+
+def imprime_lista_de_listas(cabecalho,lista):
+    if len(lista) > 0:
+        cabecalho = f":::::::::::::::::: {cabecalho} ::::::::::::::::::"
+        comprimento_cabecalho = len(cabecalho)
+        print(cabecalho)
+        print("id_comprador id_espetaculo time")
+        for l in lista:
+            print(l[0], l[1], l[2])
+        print(comprimento_cabecalho * ":")
+    else:
+        print("Lista vazia")
+        
