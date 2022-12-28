@@ -1,3 +1,6 @@
+from lotacao import(
+    lotacao_salas
+)
 def menu():
     """ Funcao menu cria o menu da aplicacao"""
 
@@ -26,6 +29,8 @@ def menu():
 
         if op == "x":
             exit()
+        elif op == "ls":
+            lotacao_salas()
         #to do: implementar novas features
 
 if __name__ == "__main__":
