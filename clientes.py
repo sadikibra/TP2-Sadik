@@ -16,4 +16,6 @@ def imprime_lista_de_clientes(lista_de_clientes):
     """ ..."""
    
     imprime_lista(cabecalho="Lista de Cliente", lista=lista_de_clientes)
+
+nome_ficheiro_lista_de_clientes = "lista_de_cliente.pk"
     

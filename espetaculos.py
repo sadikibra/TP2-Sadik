@@ -16,3 +16,5 @@ def imprime_lista_de_espetaculos(lista_de_espetaculos):
     """ ..."""
 
     imprime_lista(cabecalho="Lista de Espetaculos", lista=lista_de_espetaculos)
+
+nome_ficheiro_lista_de_espetaculos = "lista_de_espetaculos.pk"

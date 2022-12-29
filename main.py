@@ -8,13 +8,19 @@ from io_terminal import (
 from espetaculos import (
     cria_espetaculos,
     imprime_lista_de_espetaculos,
+    nome_ficheiro_lista_de_espetaculos
 )
 from clientes import (
     cria_novo_cliente,
     imprime_lista_de_clientes,
+    nome_ficheiro_lista_de_clientes
 )
 from lotacao import(
     lotacao_salas
+)
+from io_ficheiros import (
+    guarda_em_ficheiro,
+    le_de_ficheiro
 )
 def menu():
     """ Funcao menu cria o menu da aplicacao"""
@@ -65,14 +71,14 @@ def menu():
                 print("Erro: tem de ter clientes e espetaculos")
         elif op == "bl":
             imprime_lista_de_bilhetes(lista_de_compra)
-        #to do: implementar novas features
+        elif op == "g":
+            guarda_as_listas_em_ficheiros(lista_de_espetaculos, lista_de_clientes)
+        elif op == "c":
+            lista_de_espetaculos, lista_de_clientes = carrega_as_listas_dos_ficheiros()
+            #to do: implementar novas features
 
 def pergunta_id(questao, lista):
-    """ ... ??to do??
-
-    :param questao:
-    :param lista:
-    :return:
+    """todo
     """
 
     imprime_lista_de_dicionarios(lista)
@@ -82,6 +88,28 @@ def pergunta_id(questao, lista):
             return idx
         else:
             print(f"id inexistente. Tente de novo. Valores admitidos {0} - {len(lista)}")
+def carrega_as_listas_dos_ficheiros():
+    """ ...todo... """
+
+    lista_de_espetaculos = le_de_ficheiro(nome_ficheiro_lista_de_espetaculos)
+    lista_de_clientes = le_de_ficheiro(nome_ficheiro_lista_de_clientes)
+    return lista_de_espetaculos, lista_de_clientes
+
+
+def guarda_as_listas_em_ficheiros(lista_de_espetaculos, lista_de_clientes):
+    """ ... todo ....
+
+    :param lista_de_clientes:
+    :param lista_de_espetaculos:
+    :return:
+    """
+
+    op = input("Os dados nos ficheiros serão sobrepostos. Continuar (S/n)?")
+    if op in ['s', 'S', '']:
+        guarda_em_ficheiro(nome_ficheiro_lista_de_espetaculos, lista_de_espetaculos)
+        guarda_em_ficheiro(nome_ficheiro_lista_de_clientes, lista_de_clientes)
+    else:
+        print("Cancelada.")
 
 if __name__ == "__main__":
     menu()
