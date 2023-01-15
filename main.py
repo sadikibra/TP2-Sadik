@@ -75,12 +75,9 @@ def menu():
             guarda_as_listas_em_ficheiros(lista_de_espetaculos, lista_de_clientes)
         elif op == "c":
             lista_de_espetaculos, lista_de_clientes = carrega_as_listas_dos_ficheiros()
-            #to do: implementar novas features
+            
 
 def pergunta_id(questao, lista):
-    """todo
-    """
-
     imprime_lista_de_dicionarios(lista)
     while True:
         idx = int(input(questao))
@@ -88,8 +85,12 @@ def pergunta_id(questao, lista):
             return idx
         else:
             print(f"id inexistente. Tente de novo. Valores admitidos {0} - {len(lista)}")
+
 def carrega_as_listas_dos_ficheiros():
-    """ ...todo... """
+    """ 
+    Carrega os dados de espetáculos e utilizadores a partir de um ficheiro local
+    :return: o conteúdo de ambos ficheiro (depende dos dados guardados)
+    """
 
     lista_de_espetaculos = le_de_ficheiro(nome_ficheiro_lista_de_espetaculos)
     lista_de_clientes = le_de_ficheiro(nome_ficheiro_lista_de_clientes)
@@ -97,11 +98,10 @@ def carrega_as_listas_dos_ficheiros():
 
 
 def guarda_as_listas_em_ficheiros(lista_de_espetaculos, lista_de_clientes):
-    """ ... todo ....
-
-    :param lista_de_clientes:
-    :param lista_de_espetaculos:
-    :return:
+    """
+    Guarda os dados da sessão para carregar numa sessão futura.
+    :param lista_de_espetaculos: lista de espetáculos da sessão
+    :param lista_de_utilizadores: lista de utilizadores da sessão
     """
 
     op = input("Os dados nos ficheiros serão sobrepostos. Continuar (S/n)?")
