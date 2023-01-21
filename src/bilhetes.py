@@ -1,4 +1,4 @@
-from io_terminal import imprime_lista_de_listas
+from src.io_terminal import imprime_lista_de_listas
 
 
 def imprime_lista_de_bilhetes(lista_de_bilhetes):

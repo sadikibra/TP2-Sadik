@@ -1,4 +1,4 @@
-from io_terminal import imprime_lista
+from src.io_terminal import imprime_lista
 
 def cria_espetaculos():
     """ Pede ao utilizador para introduzir uma novo espetaculos
