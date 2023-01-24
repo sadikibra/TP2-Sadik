@@ -1,24 +1,25 @@
 import time
-from src.bilhetes import(
+
+from bilhetes import(
     imprime_lista_de_bilhetes
 )
-from src.io_terminal import (
+from io_terminal import (
     imprime_lista_de_dicionarios
 )
-from src.espetaculos import (
+from espetaculos import (
     cria_espetaculos,
     imprime_lista_de_espetaculos,
     nome_ficheiro_lista_de_espetaculos
 )
-from src.clientes import (
+from clientes import (
     cria_novo_cliente,
     imprime_lista_de_clientes,
     nome_ficheiro_lista_de_clientes
 )
-from src.lotacao import(
+from lotacao import(
     lotacao_salas
 )
-from src.io_ficheiros import (
+from io_ficheiros import (
     guarda_em_ficheiro,
     le_de_ficheiro
 )

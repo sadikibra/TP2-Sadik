@@ -1,4 +1,4 @@
-from src.io_terminal import imprime_lista
+from io_terminal import imprime_lista
 
 nome_ficheiro_lista_de_clientes = "lista_de_cliente.pk"
 
